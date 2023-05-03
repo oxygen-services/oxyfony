@@ -1,0 +1,16 @@
+{
+    "name": "oxygen-services/oxyfony",
+    "description": "A starter-pack for complex Symfony projects",
+    "type": "project",
+    "license": "MIT",
+    "homepage": "https://github.com/oxygen-services/oxyfony",
+    "version": "0.0.1",
+    "authors": [
+        {
+            "name": "Vincent Gendron",
+            "email": "vincent.gendron@proton.me"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {}
+}
