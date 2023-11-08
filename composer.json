@@ -1,15 +1,16 @@
 {
     "name": "oxygen-services/oxyfony",
     "description": "A starter-pack for complex Symfony projects",
-    "version": "0.0.1",
     "type": "project",
     "license": "MIT",
+    "stability": "dev",
     "minimum-stability": "stable",
     "prefer-stable": true,
     "require": {
         "php": ">=8.1.1",
         "ext-ctype": "*",
         "ext-iconv": "*",
+        "doctrine/annotations": "^2.0",
         "doctrine/doctrine-bundle": "^2.10",
         "doctrine/doctrine-migrations-bundle": "^3.2",
         "doctrine/orm": "^2.16",
@@ -32,6 +33,7 @@
         "symfony/process": "5.4.*",
         "symfony/property-access": "5.4.*",
         "symfony/property-info": "5.4.*",
+        "symfony/routing": "5.4.*",
         "symfony/runtime": "5.4.*",
         "symfony/security-bundle": "5.4.*",
         "symfony/serializer": "5.4.*",
@@ -40,6 +42,7 @@
         "symfony/twig-bundle": "5.4.*",
         "symfony/validator": "5.4.*",
         "symfony/web-link": "5.4.*",
+        "symfony/webpack-encore-bundle": "^2.1",
         "symfony/yaml": "5.4.*",
         "twig/extra-bundle": "^2.12|^3.0",
         "twig/twig": "^2.12|^3.0"
@@ -78,10 +81,13 @@
             "assets:install %PUBLIC_DIR%": "symfony-cmd"
         },
         "post-install-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "yarn install",
+            "yarn encore dev"
         ],
         "post-update-cmd": [
-            "@auto-scripts"
+            "@auto-scripts",
+            "yarn encore dev"
         ]
     },
     "conflict": {
@@ -93,12 +99,18 @@
             "require": "5.4.*"
         }
     },
+    "repositories": {
+        "bundle": {
+            "type": "path",
+            "url": "bundle/*"
+        }
+    },
     "require-dev": {
+        "oxygen-services/maker-bundle": "^1.0",
         "phpunit/phpunit": "^9.5",
         "symfony/browser-kit": "5.4.*",
         "symfony/css-selector": "5.4.*",
         "symfony/debug-bundle": "5.4.*",
-        "symfony/maker-bundle": "^1.0",
         "symfony/phpunit-bridge": "^6.3",
         "symfony/stopwatch": "5.4.*",
         "symfony/web-profiler-bundle": "5.4.*"

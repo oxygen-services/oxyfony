@@ -1,0 +1,3 @@
+[submodule "bundle/maker-bundle"]
+	path = bundle/maker-bundle
+	url = git@github.com:oxygen-services/maker-bundle.git
